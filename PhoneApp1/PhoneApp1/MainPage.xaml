@@ -1,0 +1,294 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="PhoneApp1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- LOCALIZATION NOTE:
+            To localize the displayed strings copy their values to appropriately named
+            keys in the app's neutral language resource file (AppResources.resx) then
+            replace the hard-coded text value between the attributes' quotation marks
+            with the binding clause whose path points to that string name.
+
+            For example:
+
+                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
+
+            This binding points to the template's string resource named "ApplicationTitle".
+
+            Adding supported languages in the Project Properties tab will create a
+            new resx file per language that can carry the translated values of your
+            UI strings. The binding in these examples will cause the value of the
+            attributes to be drawn from the .resx file that matches the
+            CurrentUICulture of the app at run time.
+         -->
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="10,17,0,10">
+            <TextBlock Text="MED-REC" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+            <TextBlock Text="Calendar" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Height="89"/>
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Left" Margin="12,0,0,605" Grid.Row="1" TextWrapping="Wrap" Text="January" VerticalAlignment="Bottom" Style="{StaticResource PhoneTextNormalStyle}"/>
+        
+        <TextBlock HorizontalAlignment="Left" Margin="14,32,0,0" TextWrapping="Wrap" Text="Sun" VerticalAlignment="Top" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="82,32,0,0" TextWrapping="Wrap" Text="Mon" VerticalAlignment="Top" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="155,32,0,0" TextWrapping="Wrap" Text="Tue" VerticalAlignment="Top" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="218,32,0,0" TextWrapping="Wrap" Text="Wed" VerticalAlignment="Top" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="291,32,0,0" TextWrapping="Wrap" Text="Thu" VerticalAlignment="Top" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="364,32,0,0" TextWrapping="Wrap" Text="Fri" VerticalAlignment="Top" RenderTransformOrigin="1.182,0.432" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="429,32,0,0" TextWrapping="Wrap" Text="Sat" VerticalAlignment="Top" Grid.Row="1"/>
+
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_1" VerticalAlignment="Top" Width="68" Margin="2,59,0,0">
+            <Rectangle Name="R1" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T1" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="29" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_2" VerticalAlignment="Top" Width="68" Margin="70,59,0,0">
+            <Rectangle Name="R2" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T2" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="30" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_3" VerticalAlignment="Top" Width="68" Margin="138,59,0,0">
+            <Rectangle Name="R3" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T3" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="31" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_4" VerticalAlignment="Top" Width="68" Margin="206,59,0,0">
+            <Rectangle Name="R4" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T4" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_5" VerticalAlignment="Top" Width="68" Margin="274,59,0,0">
+            <Rectangle Name="R5" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T5" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_6" VerticalAlignment="Top" Width="68" Margin="342,59,0,0">
+            <Rectangle Name="R6" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T6" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_7" VerticalAlignment="Top" Width="68" Margin="410,59,0,0">
+            <Rectangle Name="R7" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T7" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_8" VerticalAlignment="Top" Width="68" Margin="2,127,0,0">
+            <Rectangle Name="R8" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T8" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_9" VerticalAlignment="Top" Width="68" Margin="70,127,0,0">
+            <Rectangle Name="R9" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T9" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="6" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_10" VerticalAlignment="Top" Width="68" Margin="138,127,0,0">
+            <Rectangle Name="R10" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T10" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="7" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_11" VerticalAlignment="Top" Width="68" Margin="206,127,0,0">
+            <Rectangle Name="R11" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T11" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="8" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_12" VerticalAlignment="Top" Width="68" Margin="274,127,0,0">
+            <Rectangle Name="R12" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T12" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="9" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_13" VerticalAlignment="Top" Width="68" Margin="342,127,0,0">
+            <Rectangle Name="R13" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T13" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_14" VerticalAlignment="Top" Width="68" Margin="410,127,0,0">
+            <Rectangle Name="R14" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T14" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="11" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_15" VerticalAlignment="Top" Width="68" Margin="2,195,0,0">
+            <Rectangle Name="R15" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T15" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="12" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_16" VerticalAlignment="Top" Width="68" Margin="70,195,0,0">
+            <Rectangle Name="R16" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T16" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="13" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_17" VerticalAlignment="Top" Width="68" Margin="138,195,0,0">
+            <Rectangle Name="R17" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T17" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="14" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_18" VerticalAlignment="Top" Width="68" Margin="206,195,0,0">
+            <Rectangle Name="R18" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T18" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="15" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_19" VerticalAlignment="Top" Width="68" Margin="274,195,0,0">
+            <Rectangle Name="R19" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T19" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="16" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_20" VerticalAlignment="Top" Width="68" Margin="342,195,0,0">
+            <Rectangle Name="R20" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T20" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="17" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_21" VerticalAlignment="Top" Width="68" Margin="410,195,0,0">
+            <Rectangle Name="R21" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T21" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="18" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_22" VerticalAlignment="Top" Width="68" Margin="2,263,0,0">
+            <Rectangle Name="R22" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T22" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="19" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_23" VerticalAlignment="Top" Width="68" Margin="70,263,0,0">
+            <Rectangle Name="R23" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T23" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="20" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_24" VerticalAlignment="Top" Width="68" Margin="138,263,0,0">
+            <Rectangle Name="R24" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T24" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="21" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_25" VerticalAlignment="Top" Width="68" Margin="206,263,0,0">
+            <Rectangle Name="R25" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T25" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="22" VerticalAlignment="Top"/>
+            <Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_26" VerticalAlignment="Top" Width="68" Margin="274,263,0,0">
+            <Rectangle Name="R26" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T26" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="23" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_27" VerticalAlignment="Top" Width="68" Margin="342,263,0,0">
+            <Rectangle Name="R27" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T27" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="24" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_28" VerticalAlignment="Top" Width="68" Margin="410,263,0,0">
+            <Rectangle Name="R28" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T28" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="25" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_29" VerticalAlignment="Top" Width="68" Margin="2,331,0,0">
+            <Rectangle Name="R29" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T29" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="26" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_30" VerticalAlignment="Top" Width="68" Margin="70,331,0,0">
+            <Rectangle Name="R30" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T30" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="27" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_31" VerticalAlignment="Top" Width="68" Margin="138,331,0,0">
+            <Rectangle Name="R31" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T31" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="28" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_32" VerticalAlignment="Top" Width="68" Margin="206,331,0,0">
+            <Rectangle Name="R32" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T32" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="29" VerticalAlignment="Top"/>
+            <Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>
+            <Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_33" VerticalAlignment="Top" Width="68" Margin="274,331,0,0">
+            <Rectangle Name="R33" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T33" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="30" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_34" VerticalAlignment="Top" Width="68" Margin="342,331,0,0">
+            <Rectangle Name="R34" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T34" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="31" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid  HorizontalAlignment="Left" Height="68" Grid.Row="1" Tap="Grid_Tap_35" VerticalAlignment="Top" Width="68" Margin="410,331,0,0">
+            <Rectangle Name="R35" Fill="Black" HorizontalAlignment="Left" Height="68" Stroke="White" VerticalAlignment="Top" Width="68"/>
+            <TextBlock Name="T35" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top"/>
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="42,10,0,0" VerticalAlignment="Top" Width="16" Source="/doctor.png" Stretch="Fill"/>-->
+            <!--<Image HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="16" Source="/medicine.png" Stretch="Fill"/>-->
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="50" Margin="10,404,0,0" Grid.Row="1" VerticalAlignment="Top" Width="460">
+            <TextBlock HorizontalAlignment="Left" Margin="0,10,0,0" TextWrapping="Wrap" Text="26th Jan, 2014" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="126" Margin="10,459,0,0" Grid.Row="1" VerticalAlignment="Top" Width="460">
+            <Image Margin="10,10,429,95" Source="/doctor.png" Stretch="Fill"/>
+            <TextBlock Name="Doctor" HorizontalAlignment="Left" Margin="40,4,0,0" TextWrapping="Wrap" Text="Dr. John Doe, 3:00 PM" VerticalAlignment="Top"/>
+            <Image Margin="10,57,429,48" Source="/medicine.png" Stretch="Fill"/>
+            <TextBlock Name="MedA" HorizontalAlignment="Left" Margin="40,54,0,0" TextWrapping="Wrap" Text="Dolo 650mg, 4:00 PM" VerticalAlignment="Top"/>
+            <Image Margin="10,96,429,9" Source="/medicine.png" Stretch="Fill"/>
+            <TextBlock Name="MedB" HorizontalAlignment="Left" Margin="40,93,0,0" TextWrapping="Wrap" Text="Cetrizine 100mg, 1:00 PM" VerticalAlignment="Top"/>
+        </Grid>
+
+        <!--ContentPanel - place additional content here-->
+
+        <!--Uncomment to see an alignment grid to help ensure your controls are
+            aligned on common boundaries.  The image has a top margin of -32px to
+            account for the System Tray. Set this to 0 (or remove the margin altogether)
+            if the System Tray is hidden.
+
+            Before shipping remove this XAML and the image itself.-->
+        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+    </Grid>
+
+</phone:PhoneApplicationPage>
