@@ -19,5 +19,5 @@
 		else
 			echo $result;
 		}
-		// UPDATE `medpil`.`patient_info` SET `phone` = '9489244684' WHERE `patient_info`.`phone` =2147483647;
+		// UPDATE `medpil`.`patient_info` SET `phone` = '912345678' WHERE `patient_info`.`phone` =2147483647;
 	?>
